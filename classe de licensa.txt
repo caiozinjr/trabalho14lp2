@@ -1,0 +1,35 @@
+using Aula14;
+using System;
+
+namespace Aula14
+{
+public class Licensa : Produto
+{
+    
+    protected string _chaveAtivacao;
+
+    public string ChaveAtivacao
+    {
+        get { return this._chaveAtivacao; }
+    }
+
+    public Licensa(string chaveAtivacao, double preco, string nome)
+    {
+        this._chaveAtivacao = chaveAtivacao;
+        this._preco = preco;
+        this._nome = nome;
+    }
+
+    public override double CalculaValorTotal()
+    {
+        return this._preco;
+    }
+
+    public override void Imprimir()
+    {
+        Console.WriteLine("Software:\t{0}", this.Nome); 
+        Console.WriteLine("Valor:\t\tR$ {0:0.00}", this.CalculaValorTotal());
+    }
+}
+}
+
